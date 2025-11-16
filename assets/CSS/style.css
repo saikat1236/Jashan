@@ -1691,7 +1691,9 @@ button.carousel-control-next div {
         margin-left: 10px;
     }
 }
-
+.txt{
+    
+}
 @media(max-width:767px) {
     .custom-position {
         position: relative;
