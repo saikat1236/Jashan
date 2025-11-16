@@ -124,13 +124,19 @@
                 <div class="rera-project-title">Jashn Elevate</div>
                 <div class="project-approved-box d-flex justify-content-center align-items-center">
                     <div class="image-box img-box">
-                        <img src="assets/Images/qrcode_elevate.webp" alt="Bank-logo">
+                        <img src="assets/Images/qr-code.png" alt="Bank-logo">
                     </div>
                     <div class="text-box ps-4 ms-4 border-left">
                         <p class="mb-2">Project Name: <b>Jashn Elevate</b></p>
-                        <p class="mb-2">Project RERA No. - <b>UPRERAPRJ787868</b></p>
+                        <p class="mb-2">Project RERA No. - <b>UPRERAPRJ856344/07/2025</b></p>
+                             <p class="mb-2">Rera Website: <b>www.up-rera.in/projects</b></p>
+                                <p class="mb-2">Name of the Account: <b>Privue Builders Pvt Ltd Coll A/c Jashn Elevate Phase 3</b></p>
+                                   <p class="mb-2">Account No.: <b> 0294002900000118, Bank Name: Punjab National Bank, Branch Name: Halwasia, Hazratganj, Lucknow. | IFSC Code: PUNB0029400</b></p>
+ 
+     <p class="mb-2">Launch Date: <b>7* July, 2025</b></p>
+
                         <p class="mb-2">Authorized Channel Partner: <b>Mani Land and Housing LLP</b></p>
-                        <p class="mb-2">Rera No. <b>UPRERRAAGT25232</b></p>
+                        <p class="mb-2">Rera No. <b>UPRERAPRJ856344/07/2025</b></p>
                         <p class="mb-2">Rera Website: <b><a href="www.up-rera.in">www.up-rera.in</a></b></p>
                     </div>
                 </div>
@@ -138,10 +144,10 @@
                 <p class="text-center mt-2 mb-2 mobile-m-top"><b>2.5 BHK, 3 BHK & 3.5 BHK LUXURY APARTMENTS</b></p>
                 <p class="text-center mt-2 mb-2"><b><i class="ri-map-pin-2-fill"></i> Sushant Golf City, Lucknow</b></p>
                 <div class="text-center rera-button">Starting Price ₹ 98 Lacs*</div>
-                <div class="rera-form-show">
+                <!-- <div class="rera-form-show">
                     <script src='//forms.cdn.sell.do/t/forms/64e8470c4443ae6d5f19f377/66ebcdbd58f1e7d0979cc4d4.js'
                         data-form-id='66ebcdbd58f1e7d0979cc4d4'></script>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="mt-3 row justify-content-center align-items-center">
@@ -257,8 +263,135 @@
                 </div>
             </div>
             <div class="contact-body">
-                <script src='//forms.cdn.sell.do/t/forms/64e8470c4443ae6d5f19f377/66ebcdbd58f1e7d0979cc4d4.js'
-                    data-form-id='66ebcdbd58f1e7d0979cc4d4'></script>
+                <!-- ==== JASHN ELEVATE ENQUIRY FORM ==== -->
+<form id="telecrmForm" style="
+      max-width:90%; margin:10px auto; padding:20px;
+      background:#fff; border-radius:12px; 
+      font-family:'Segoe UI',Arial,sans-serif; text-align:center;
+    ">
+  <h2 style="margin:0 0 20px; font-weight:600; color:#1a1a1a;">JASHN ELEVATE</h2>
+
+  <!-- Full Name -->
+  <input type="text" id="fullName" name="fullName" placeholder="Full Name" required
+         style="width:100%; padding:12px 14px; margin:10px 0;
+                border:1px solid #d1d5db; border-radius:8px; font-size:15px;">
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+    <!-- Phone (with flag) -->
+    <div style="flex:1; position:relative;">
+ 
+      <input type="tel" id="phone" name="phone" placeholder="Phone" required
+             style="width:100%; padding:12px 14px;
+                    border:1px solid #d1d5db; border-radius:8px; font-size:15px;">
+    </div>
+
+    <!-- Email -->
+    <input type="email" id="email" name="email" placeholder="Email" required
+           style="flex:1; padding:12px 14px;
+                  border:1px solid #d1d5db; border-radius:8px; font-size:15px;">
+  </div>
+
+  <!-- Unit Specification -->
+<div style="margin:15px 0; text-align:left; font-size:14px; color:#4b5563;">
+    <strong>Unit Specification</strong><br>
+    <label style="margin-right:20px; cursor:pointer;">
+      <input type="radio" name="bhk" value="2.5 BHK" style="margin-right:6px;"> 2.5 BHK
+    </label>
+    <label style="margin-right:20px; cursor:pointer;">
+      <input type="radio" name="bhk" value="3 BHK" checked style="margin-right:6px;"> 3 BHK
+    </label>
+    <label style="cursor:pointer;">
+      <input type="radio" name="bhk" value="3.5 BHK" style="margin-right:6px;"> 3.5 BHK
+    </label>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" id="submitBtn" style="
+            width:100%; padding:14px; margin-top:10px;
+            background:#d97706; color:white; border:none; border-radius:50px;
+            font-weight:600; font-size:16px; cursor:pointer;
+          ">Submit</button>
+</form>
+
+<script>
+  // ==== CONFIG: ONLY CHANGE THESE TWO LINES ====
+  const ENTERPRISE_ID = '67a7003330262522224668d2';
+  const API_TOKEN     = '03ca4169-eee1-4d26-8f33-aa496f0078001763095481413:510dcbfb-bead-4c2f-a7f2-c85f461be485';
+  // ==============================================
+
+  const ENDPOINT = `https://next.telecrm.in/autoupdate/v2/enterprise/${ENTERPRISE_ID}/lead`;
+
+  document.getElementById('telecrmForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stop normal form submit
+
+    // Collect values
+    const name   = document.getElementById('fullName').value.trim();
+    const email  = document.getElementById('email').value.trim();
+    const phoneInput = document.getElementById('phone').value.trim();
+    const bhk    = Array.from(document.querySelectorAll('input[name="bhk"]:checked'))
+                        .map(cb => cb.value).join(', ') || 'Not selected';
+
+    // Build clean phone with +91
+    const phone = '+91' + phoneInput.replace(/\D/g, '');
+
+    // Build TeleCRM payload
+    const payload = {
+      fields: {
+        name: name,
+        phone: phone,
+        email: email,
+        rating: 0,
+        status: 'Fresh',
+        property1: bhk,
+        lead_source_1: 'Jashn Website',
+      },
+      actions: []
+    };
+
+    console.log('Sending to TeleCRM:', payload);
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${API_TOKEN}`
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const responseText = await res.text();
+      console.log('Response:', res.status, responseText);
+
+      if (res.ok) {
+        // 1. Download PDF
+        const link = document.createElement('a');
+        link.href = "Jashn Elevate Brochure.pdf";
+        link.download = 'Jashn_Elevate_Brochure.pdf'; // Optional: custom filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+// 2. Close popup using your existing function
+        setTimeout(() => {
+          if (typeof closePop === 'function') {
+            closePop();
+          }
+        }, 300); // Small delay to ensure download starts
+        e.target.reset(); // Clears all inputs (works because it's a <form>)
+      } else {
+        alert(`Error ${res.status}: ${responseText || 'Failed to send.'}`);
+      }
+    } catch (err) {
+      console.error('Network/API Error:', err);
+      alert('Connection failed. Check internet or console (F12).');
+    }
+  });
+</script>
+
+
+                <!-- <script src='//forms.cdn.sell.do/t/forms/64e8470c4443ae6d5f19f377/66ebcdbd58f1e7d0979cc4d4.js'
+                    data-form-id='66ebcdbd58f1e7d0979cc4d4'></script> -->
             </div>
         </div>
     </section>
@@ -298,7 +431,7 @@
                     <button class="play_pause_button" data-video="video1"><i class="ri-play-circle-fill"></i></button>
                     <button class="audio-mute" data-video="video1"><i class="ri-volume-mute-fill"></i></button>
                 </div>
-                <div class="mt-4 row justify-content-center align-items-center">
+                <!-- <div class="mt-4 row justify-content-center align-items-center">
                     <div class="col-12 text-center">
                         <a href="tel:9005157779" class="inquiry-btn contact-option">
                             <span class="tel-icons">
@@ -310,7 +443,7 @@
                                 <i class="ri-download-2-fill"></i>
                             </span> Download Brochure
                         </button>
-                    </div>
+                    </div> -->
                 </div>
                 <section>
                     <div class="overview-grid">
@@ -345,7 +478,7 @@
                                         residences in Lucknow.
                                     </span>
                                 </p>
-                                <div class="mt-4 row justify-content-center align-items-center">
+                                <!-- <div class="mt-4 row justify-content-center align-items-center">
                                     <div class="col text-left">
                                         <a href="tel:9005157779" class="inquiry-btn contact-option">
                                             <span class="tel-icons">
@@ -358,7 +491,7 @@
                                             </span> Download Brochure
                                         </button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -375,7 +508,7 @@
                                         engineers, featuring spacious balconies and an in-built store in each flat.
                                     </span>
                                 </p>
-                                <div class="mt-4 row justify-content-center align-items-center">
+                                <!-- <div class="mt-4 row justify-content-center align-items-center">
                                     <div class="col text-left">
                                         <a href="tel:9005157779" class="inquiry-btn contact-option">
                                             <span class="tel-icons">
@@ -388,7 +521,7 @@
                                             </span> Download Brochure
                                         </button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="overview-sleder">
                                 <div class="swiper overview-slider">
@@ -591,15 +724,78 @@
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 <div class="price-tile">
+    <div class="price-title">Price</div>
+    <div class="price-content d-flex flex-column">
+        <!-- Main Pricing Table -->
+        <div class="table-responsive mb-3">
+            <table class="table table-bordered table-sm" style="font-size:0.9rem;">
+                <thead class="thead-light" style="background-color:#f4e4bc;">
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>FLOOR</th>
+                        <th>ACCOMMODATION</th>
+                        <th>TOTAL SALE PRICE (₹ in Lacs)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Ground to Fifteenth</td>
+                        <td>3 BHK + Store + 3 Toilets</td>
+                        <td>Starts From: 126.50</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Ground to Fifteenth</td>
+                        <td>3 BHK Large + Store/Pooja + 4 Toilets</td>
+                        <td style="background-color:#e3f2fd;">Starts From: 154.0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <small class="text-muted">Note: GST will be charged extra as applicable.</small>
+        </div>
+
+        <!-- Additional Charges Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm" style="font-size:0.9rem;">
+                <thead class="thead-light" style="background-color:#f4e4bc;">
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>DESCRIPTION</th>
+                        <th>AMOUNT (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>ADVANCE MAINTENANCE CHARGES FOR 1 YEAR AS PER RERA ATS</td>
+                        <td>TBD</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>3 BHK + Store + 3 Toilets</td>
+                        <td>₹82,500</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>3 BHK Large + Store/Pooja + 4 Toilets</td>
+                        <td>₹99,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+                                <!-- <div class="price-tile">
                                     <div class="price-title">Price</div>
                                     <div class="price-content d-flex flex-column">
                                         <div class="price-tag">
-                                            <span>2.5BHK</span>
-                                            <span>₹ 98 Lac onwards</span>
+                                            <span>3BHK +Store +3Toilets</span>
+                                            <span>Starts From: 126.50 lakhs</span>
                                         </div>
                                         <div class="price-tag">
-                                            <span>3BHK + 3T + Store</span>
-                                            <span>₹ 1.08 Cr onwards</span>
+                                            <span>3BHK Large +Store/Pooja +4Toilets</span>
+                                            <span>Starts From: 154.0 lakhs</span>
                                         </div>
                                         <div class="price-tag">
                                             <span>3BHK Large + 4T + Store/Puja</span>
@@ -610,8 +806,8 @@
                                             <span>₹ 1.50 Cr onwards</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="mt-3 row justify-content-center align-items-center">
+                                </div> -->
+                                <!-- <div class="mt-3 row justify-content-center align-items-center">
                                     <div class="col-12 text-center">
                                         <a href="tel:9005157779" class="inquiry-btn contact-option">
                                             <span class="tel-icons">
@@ -624,7 +820,7 @@
                                             </span> Download Brochure
                                         </button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -814,7 +1010,7 @@
                     <div class="swiper-button-prev"><i class="ri-arrow-left-line"></i></div>
                 </div>
             </div>
-            <div class="mt-3 row justify-content-center align-items-center">
+            <!-- <div class="mt-3 row justify-content-center align-items-center">
                 <div class="col-12 text-center">
                     <a href="tel:9005157779" class="inquiry-btn contact-option">
                         <span class="tel-icons">
@@ -827,7 +1023,7 @@
                         </span> Download Brochure
                     </button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- End Amenities -->
@@ -1041,7 +1237,7 @@
                         </div>
                     </div>
                 </section>
-                <div class="mt-3 row justify-content-center align-items-center">
+                <!-- <div class="mt-3 row justify-content-center align-items-center">
                     <div class="col-12 text-center">
                         <a href="tel:9005157779" class="inquiry-btn contact-option">
                             <span class="tel-icons">
@@ -1054,7 +1250,7 @@
                             </span> Download Brochure
                         </button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -1475,7 +1671,7 @@
                         <i class="ri-add-line"></i>
                     </button>
                     <div class="accordion-content">
-                        <p>Jashn Elevate is just 0.87 km from Lucknow Railway Station, ensuring easy connectivity.</p>
+                        <p>Jashn Elevate is just 11.6 km from Lucknow Railway Station, ensuring easy connectivity.</p>
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -1813,7 +2009,7 @@
             <div class="text-center"><span class="fw-bold">Disclaimer</span>The prices mentioned are subject to change
                 without notice. Jashn Elevate is marketed by Mani Land And Housing LLP, an authorized sales partner of
                 Jashn Realty. Terms and conditions apply.<br>
-                <p>Project RERA Registration No.- UPRERAPRJ654285/05/2024 and is available on the website www.up-rera.in
+                <p>Project RERA Registration No.- UPRERAPRJ856344/07/2025 and is available on the website www.up-rera.in
                     under registered projects.</p>
             </div>
         </div>
