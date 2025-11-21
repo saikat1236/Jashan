@@ -677,6 +677,7 @@ header.sticky {
     margin-bottom: 30px;
     position: relative;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .overview-heading::before {
@@ -684,7 +685,8 @@ header.sticky {
     content: "";
     left: 0;
     bottom: -8px;
-    width: 180px;
+    /* width: 180px; */
+    width: 100%;
     height: 2px;
     background: var(--primary-color);
 }
